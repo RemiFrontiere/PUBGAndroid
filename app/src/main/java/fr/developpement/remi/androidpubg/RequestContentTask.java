@@ -66,13 +66,13 @@ public class RequestContentTask extends AsyncTask<String, Void, String> {
 
 
                         montext.setText("[platformId : " + informations.getPlatformId().toString() + "]\n" +
-                        "[platformId : " + informations.getAccountId() + "]\n" +
-                        "[platformId : " + informations.getSelectedRegion() + "]\n" +
-                        "[platformId : " + informations.getDefaultSeason() + "]\n" +
-                        "[platformId : " + informations.getSeasonDisplay() + "]\n" +
-                        "[platformId : " + informations.getLastUpdated() + "]\n" +
-                        "[platformId : " + informations.getPlayerName() + "]\n" +
-                        "[platformId : " + informations.getPubgTrackerId().toString() + "]\n");
+                        "[AccountId : " + informations.getAccountId() + "]\n" +
+                        "[selectedRegion : " + informations.getSelectedRegion() + "]\n" +
+                        "[defaultSeason : " + informations.getDefaultSeason() + "]\n" +
+                        "[seasonDisplay : " + informations.getSeasonDisplay() + "]\n" +
+                        "[LastUpdated : " + informations.getLastUpdated() + "]\n" +
+                        "[PlayerName : " + informations.getPlayerName() + "]\n" +
+                        "[PubgTrackerId : " + informations.getPubgTrackerId().toString() + "]\n");
             }
 
         }
