@@ -14,11 +14,11 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btAfficher;
     private RequestContentTask maTask;
     private TextView montext;
     public static Informations mesinfos;
     private TextView lePseudoJoueur;
+    private String monURL = "https://pubgtracker.com/api/profile/pc/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,14 @@ public class MainActivity extends AppCompatActivity {
         builder.setPositiveButton("VALIDER", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+
                 lePseudoJoueur.setText(input.getText().toString());
+
+                if(lePseudoJoueur != null) {
+                    monURL += lePseudoJoueur.getText();
+                    maTask = new RequestContentTask();
+                    maTask.execute(monURL);
+                }
             }
         });
         builder.setNegativeButton("CANCER", new DialogInterface.OnClickListener() {
@@ -48,33 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
         builder.show();
 
-        this.btAfficher = (Button)findViewById(R.id.btafficher);
         this.montext = (TextView)findViewById(R.id.montext);
         maTask.montext = montext;
-
-
-        this.btAfficher.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                String[] monURL = null;
-                maTask = new RequestContentTask();
-                maTask.execute("https://pubgtracker.com/api/profile/pc/Superpom");
-
-                try {
-
-
-
-                }
-                catch (Exception e)
-                {
-                    montext.setText(e.getMessage());
-                }
-            }
-        });
-
-
-
 
 
     }

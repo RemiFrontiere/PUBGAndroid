@@ -1,5 +1,8 @@
 package fr.developpement.remi.androidpubg;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 /**
  * Created by REMI on 02/08/2017.
  */
@@ -15,6 +18,7 @@ public class Informations {
     private String lastUpdated;
     private String playerName;
     private Integer pubgTrackerId;
+    private ArrayList<Type> mesTypesDeClassement; // Duo, Solo, Squad
 
     public Informations(Integer platformId, String accountId, String avatar, String selectedRegion,
                         String defaultSeason, String seasonDisplay, String lastUpdated, String playerName, Integer pubgTrackerId){
@@ -28,6 +32,9 @@ public class Informations {
         this.setPlayerName(playerName);
         this.setPubgTrackerId(pubgTrackerId);
     }
+
+
+
 
     public Integer getPlatformId() {
         return platformId;
@@ -99,5 +106,13 @@ public class Informations {
 
     public void setPubgTrackerId(Integer pubgTrackerId) {
         this.pubgTrackerId = pubgTrackerId;
+    }
+
+    public ArrayList<Type> getMesTypesDeClassement() {
+        return mesTypesDeClassement;
+    }
+
+    public void setMesTypesDeClassement(ArrayList<Type> mesTypesDeClassement) {
+        this.mesTypesDeClassement = mesTypesDeClassement;
     }
 }
